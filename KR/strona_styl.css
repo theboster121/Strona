@@ -1,0 +1,151 @@
+/* Strona */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+}
+
+/* Naglówek */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Strona główna */
+.container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.lewy {
+    width: 20%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+/* Menu rozwijane */
+.lewy ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+.lewy ol a {
+    text-decoration: none;
+    color: black;
+}
+
+.lewy ol {
+    background-color: #FFF;
+}
+
+.lewy ol > li > ul > li {
+    background-color: #EEE;
+}
+
+.lewy ol > li > ul > li:hover {
+    background-color: #DDD;
+}
+
+.lewy ol > li > ul > li:hover > a {
+    color: darkcyan;
+}
+
+.lewy ol > li > ul {
+    display: none;
+}
+
+.lewy ol > li:hover {
+    background-color: #DDD;
+}
+
+.lewy ol > li:hover > a {
+    color: darkcyan;
+}
+
+.lewy ol > li:hover > ul {
+    display: block;
+}
+
+.lewy ul {
+    list-style: none;
+}
+
+.lewy ul li a {
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+
+.lewy ul li:hover {
+    text-decoration: none;
+    color: green;
+}
+
+.prawy {
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Stopka */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Mapa */
+#map {
+    margin-top: 20px;
+    border: 2px solid #333;
+}
+
+/* Galeria zdjęć */
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 30%;
+    border: 2px solid #333;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Porady */
+#porady {
+    margin-top: 30px;
+}
+
+#porady ul {
+    list-style-type: none;
+}
+
+#porady li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
