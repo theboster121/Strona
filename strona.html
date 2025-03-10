@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking - Poradnik przetrwania dla studentów</title>
+    <link rel="stylesheet" href="strona_styl.css">
+    <!-- Link do Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <!-- Nagłówek -->
+    <header>
+        <h1> Parking - Poradnik przetrwania dla studentów </h1>
+    </header>
+
+    <!-- Glówna strona -->
+    <section class="container">
+        <div class="lewy">
+            <ol>
+                <li><a href="#">Menu</a>
+                    <ul>
+                        <li><a href="#mapa">Mapa parkingów</a></li>
+                        <li><a href="#zdjecia">Galeria zdjęć</a></li>
+                        <li><a href="#porady">Porady</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <nav class="prawy">
+            <h2>Witaj na pierwszej linii frontu!</h2>
+            <p>Czy kiedykolwiek spędziłeś więcej czasu na szukaniu miejsca parkingowego niż na samej uczelni?</p>
+            <p>Czy czujesz dreszcz adrenaliny, gdy w odali widzisz wolne miejsce... tylko po to, by ktoś ci je sprzątnął sprzed nosa? 
+                Jeśli tak - jesteś w dobrym miejscu. 
+            </p>
+            <p>Ta strona to przewodnik dla tych, którzy codziennie toczą nierówną walkę z rzeczywistością parkingową Politechniki Częstochowskiej.</p>
+            <br>
+
+            <!-- Sekcja z mapą -->
+            <section id="mapa">
+                <h3>Mapa parkingów na Politechnice Częstochowskiej</h3>
+                <div id="map" style="height: 400px; width: 100%;"></div>
+            </section>
+
+            <!-- Sekcja z galerią zdjęć -->
+            <section id="zdjecia">
+                <h3>Galeria zdjęć: Życie parkingowe</h3>
+                <div class="gallery">
+                    <img src="parking1.jpg" alt="Zajęty parking 1">
+                    <img src="parking2.jpg" alt="Zajęty parking 2">
+                    <img src="parking3.jpg" alt="Pusty parking">
+                </div>
+            </section>
+
+            <!-- Sekcja z poradami -->
+            <section id="porady">
+                <h3>Porady przetrwania na parkingu</h3>
+                <ul>
+                    <li>Zapewnij sobie wolne miejsce na parkingu, wstając o 5:30 rano!</li>
+                    <li>Unikaj popularnych godzin - parkingi są wtedy jak pole bitwy.</li>
+                    <li>Rozważ zainwestowanie w skuter, bo nie ma miejsca dla samochodu, ale dla skutera zawsze coś się znajdzie!</li>
+                </ul>
+            </section>
+        </nav>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <h1> Życzymy powodzenia w walce o miejsce parkingowe! </h1>
+    </footer>
+
+    <!-- Skrypt do inicjalizacji mapy -->
+    <script>
+        function initMap() {
+            var myLatLng = { lat: 50.811, lng: 19.120 };  // Koordynaty Politechniki Częstochowskiej
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: myLatLng
+            });
+
+            // Marker na mapie
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Politechnika Częstochowska'
+            });
+
+            // Możliwość dodawania markerów klikając na mapie
+            map.addListener('click', function(e) {
+                new google.maps.Marker({
+                    position: e.latLng,
+                    map: map
+                });
+            });
+        }
+    </script>
+</body>
+</html>
